@@ -39,8 +39,11 @@ const HiddenObject = ({ x, y, src, found, onClick }) => {
       <KonvaImage image={image} x={x} y={y} width={50} onClick={onClick} />
       {found && (
         <>
-          <Line points={[x, y, x + 50, y + 50]} stroke="red" strokeWidth={5} />
-          <Line points={[x + 50, y, x, y + 50]} stroke="red" strokeWidth={5} />
+          <Line points={[x + 10, y + 30, x + 20, y + 40]} stroke="white" strokeWidth={7} />
+          <Line points={[x + 20, y + 40, x + 40, y + 10]} stroke="white" strokeWidth={7} />
+
+          <Line points={[x + 10, y + 30, x + 20, y + 40]} stroke="green" strokeWidth={5} />
+          <Line points={[x + 20, y + 40, x + 40, y + 10]} stroke="green" strokeWidth={5} />
         </>
       )}
     </>
@@ -127,23 +130,23 @@ const Home = () => {
           </Layer>
         </Stage>
         {showModal && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          background: 'rgba(0, 0, 0, 0.8)',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column',
-          color: 'white',
-        }}>
-          <h2>Parabéns! Você encontrou todos os personagens!</h2>
-          <button onClick={restartGame} style={{ padding: '10px 20px', fontSize: '16px' }}>Jogar Novamente</button>
-        </div>
-      )}
+          <div style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            background: 'rgba(0, 0, 0, 0.8)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
+            color: 'white',
+          }}>
+            <h2>Parabéns! Você encontrou todos os personagens!</h2>
+            <button onClick={restartGame} style={{ padding: '10px 20px', fontSize: '16px' }}>Jogar Novamente</button>
+          </div>
+        )}
       </div>
     </div>
   );
